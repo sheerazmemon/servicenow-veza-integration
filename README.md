@@ -108,3 +108,33 @@ When Veza detects a risk threshold breach it calls the endpoint directly, and a 
 ## Author
 
 Built by Sheeraz Memon as a hands-on Veza SME lab and ServiceNow Brown Bag demonstration.
+
+---
+
+## Sample Dry Run Output
+
+Run the connector with --dry-run to validate your credentials and preview the payload before pushing to Veza:
+
+    python3 veza_servicenow_connector.py --dry-run
+
+Output from a live ServiceNow PDI:
+
+    17:02:51  INFO      Fetching active users from ServiceNow ...
+    17:02:52  INFO      Fetching roles from ServiceNow ...
+    17:02:52  INFO      Fetching user-role assignments from ServiceNow ...
+    17:02:56  INFO      Fetching tables from ServiceNow ...
+    17:02:57  INFO      Building OAA payload: 637 users, 197 roles, 4834 assignments, 179 tables
+    17:02:57  INFO      Payload saved to sn_oaa_payload.json
+    17:02:57  INFO      Dry-run mode: skipping Veza push. Payload saved.
+
+    Payload summary:
+      Users:        637
+      Roles/groups: 197
+      Resources:    179
+      Permissions:  5
+      Identity->perm bindings: 86
+
+Remove --dry-run to push the payload live into Veza. ServiceNow will appear under
+Integrations > Custom and every user will be searchable in the Access Graph.
+
+![Dry run output](screenshots/VezaRun.png)
