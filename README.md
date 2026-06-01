@@ -30,7 +30,7 @@ A working reference implementation connecting ServiceNow and Veza — built as a
 
 ### 1. Clone the repo
 
-    git clone https://github.com/YOUR_GITHUB_USERNAME/servicenow-veza-integration.git
+    git clone https://github.com/sheerazmemon/servicenow-veza-integration.git
     cd servicenow-veza-integration
 
 ### 2. Configure credentials
